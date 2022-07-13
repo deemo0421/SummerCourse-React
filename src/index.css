@@ -1,13 +1,58 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand";
+  color: #333;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  margin: 10px auto;
+  max-width: 600px;
+  border: 2px solid #333;
+}
+.App h1{
+  padding: 5px;
+}
+.edit{
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+p{
+  text-align: left;
+}
+input{
+  width: 100%;
+  padding: 2px;
+  margin:10px 0px;
+}
+.add{
+  width: 30%;
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.list{
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: left;
+}
+.item{
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000;
+}
+.item h2{
+  color: f1356d;
+}
+.item button{
+  margin: 5px 0px;
+  background: #7b7979;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
 }

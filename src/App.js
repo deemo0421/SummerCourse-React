@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Edit from './components/Edit';
+import List from './components/List';
+import { useState, useEffect } from "react"
+import { v4 } from 'uuid';
+
 
 function App() {
+  const [todos, setTodos] = useState([
+    { title:'學React', content: '學useState', id: v4()},
+    { title:'學React', content: '學useEffect', id: v4()},
+    { title:'學js', content: '學Fetch', id: v4()}
+  ])  
+
+  useEffect(()=>{
+    console.log('useEffect 執行');
+    console.log(todos);
+  },[todos])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Todo List</h1>
+      <Edit addData = {setTodos} />
+      <List data = { todos } deleteData = {setTodos}/>
     </div>
   );
 }

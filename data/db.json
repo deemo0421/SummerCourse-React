@@ -1,0 +1,19 @@
+{
+    "todos":[
+        {
+            "title":"React", 
+            "content": "useStat 與 useEffect", 
+            "id": 1
+        },
+        {
+            "title":"js", 
+            "content": "學fetch", 
+            "id": 2
+        },
+        {
+            "title":"JSON sever", 
+            "content": "JSON sever", 
+            "id": 3
+        }
+    ]
+}
