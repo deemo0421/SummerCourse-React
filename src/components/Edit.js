@@ -14,10 +14,19 @@ const Edit = ({addData}) =>{
     }
 
     const handleclick = () =>{
-        addData((prevData)=>{
-            return [...prevData, { title, content, id: v4() }]
-        }) 
-    }
+        // addData((prevData)=>{
+        //     return [...prevData, { title, content, id: v4() }]
+        // }) 
+        const data = { title, content, id: v4() }
+        fetch('http://localhost:3001/todos',{
+            method:'POST',
+            headers :{"Content-Type" : "application/json"},
+            body: JSON.stringify(data)
+        })
+        .then(res => console.log(res))
+        .then(addData(true))
+        .catch(err => console.log(err))
+        }
 
     return(
         <div className="edit">

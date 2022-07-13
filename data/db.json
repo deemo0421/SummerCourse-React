@@ -1,19 +1,14 @@
 {
-    "todos":[
-        {
-            "title":"React", 
-            "content": "useStat 與 useEffect", 
-            "id": 1
-        },
-        {
-            "title":"js", 
-            "content": "學fetch", 
-            "id": 2
-        },
-        {
-            "title":"JSON sever", 
-            "content": "JSON sever", 
-            "id": 3
-        }
-    ]
+  "todos": [
+    {
+      "title": "JSON sever",
+      "content": "JSON sever",
+      "id": 3
+    },
+    {
+      "title": "react",
+      "content": "useState",
+      "id": "58358420-f966-4446-98dd-476a2d57d7c2"
+    }
+  ]
 }

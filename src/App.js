@@ -6,22 +6,32 @@ import { v4 } from 'uuid';
 
 
 function App() {
-  const [todos, setTodos] = useState([
-    { title:'學React', content: '學useState', id: v4()},
-    { title:'學React', content: '學useEffect', id: v4()},
-    { title:'學js', content: '學Fetch', id: v4()}
-  ])  
+  const [todos, setTodos] = useState([])
+  const [reload, setReload] = useState(false)  
+
+  const getData = async() =>{
+    const res = await fetch('http://localhost:3001/todos');
+    const data = await res.json();
+    setTodos(data);
+    setReload(false)
+  } 
 
   useEffect(()=>{
-    console.log('useEffect 執行');
-    console.log(todos);
-  },[todos])
+      getData()
+    // fetch('http://localhost:3001/todos')
+    // .then( res => res.json())
+    // .then( data => {
+    //   console.log(data);
+    //   setTodos(data)
+    // })
+    // .catch( err => console.log(err))
+  },[reload])
 
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <Edit addData = {setTodos} />
-      <List data = { todos } deleteData = {setTodos}/>
+      <Edit addData = {setReload} />
+      <List data = { todos } deleteData = {setReload}/>
     </div>
   );
 }
